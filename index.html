@@ -7,31 +7,33 @@
 </head>
 <body>
 
-  <div class="card">
+  <div class="contenedor">
 
-    <div class="img-container">
-      <img src="assets/img/computador.jpg" alt="Producto">
+    <div class="card">
+
+      <div class="img-container">
+        <img src="assets/img/computador.jpg" alt="Producto">
+      </div>
+
+      <h3>Laptop Gamer AMD</h3>
+
+      <p class="precio-base">
+        Precio base: $<span id="precioBase">600000</span>
+      </p>
+
+      <div class="cantidad-container">
+        <span>Cantidad:</span>
+        <span id="cantidad">0</span>
+        <button id="btnMas">+</button>
+        <button id="btnMenos">-</button>
+      </div>
+
     </div>
 
-    <h3>Laptop Gamer AMD</h3>
-
-    <p class="precio-base">
-      Precio base: $<span id="precioBase">500.000</span>
-    </p>
-
-    <div class="cantidad-container">
-      <button id="btnMenos">−</button>
-      <span id="cantidad">0</span>
-      <button id="btnMas">+</button>
+    <div class="total-pagar">
+      Total a pagar:
+      $<span id="totalPagar">0</span>
     </div>
-
-    <div class="total">
-      Total acumulado: $<span id="totalGeneral">0</span>
-    </div>
-
-    <button id="btnAgregar" class="btn-agregar">
-      Agregar al carrito
-    </button>
 
   </div>
 

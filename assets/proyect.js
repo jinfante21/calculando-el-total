@@ -1,49 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   let cantidad = 0;
-  let totalGeneral = 0;
 
   const cantidadElemento = document.getElementById("cantidad");
-  const totalGeneralElemento = document.getElementById("totalGeneral");
+  const totalPagarElemento = document.getElementById("totalPagar");
   const precioBaseElemento = document.getElementById("precioBase");
 
   const btnMas = document.getElementById("btnMas");
   const btnMenos = document.getElementById("btnMenos");
-  const btnAgregar = document.getElementById("btnAgregar");
 
   let precioBase = parseInt(precioBaseElemento.textContent);
 
-  function actualizarCantidad() {
+  function actualizarTotal() {
+    let total = precioBase * cantidad;
     cantidadElemento.textContent = cantidad;
+    totalPagarElemento.textContent = total;
   }
 
   btnMas.addEventListener("click", function () {
     cantidad++;
-    actualizarCantidad();
+    actualizarTotal();
   });
 
   btnMenos.addEventListener("click", function () {
     if (cantidad > 0) {
       cantidad--;
-      actualizarCantidad();
+      actualizarTotal();
     }
-  });
-
-  btnAgregar.addEventListener("click", function () {
-
-    if (cantidad > 0) {
-
-      let subtotal = precioBase * cantidad;
-
-      totalGeneral += subtotal;
-
-      totalGeneralElemento.textContent =
-        totalGeneral.toLocaleString("es-CL");
-
-      cantidad = 0;
-      actualizarCantidad();
-    }
-
   });
 
 });
